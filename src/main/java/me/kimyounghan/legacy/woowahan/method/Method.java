@@ -13,7 +13,7 @@ public class Method {
     public void createOrder(){
         String orderNo = createOrderNo();
         Order order = createOrder(orderNo);
-        PayResult payResult = pay(order);
+        PayResult payResult = pay(order.getPayInfo());
 
         if(isPaid(payResult))
             orderComplete(order);
@@ -52,6 +52,19 @@ public class Method {
     }
 
     /**
+     * 결제 정보에 따라 온라인 결제 혹은 오프라인 결제를 한다
+     *
+     * @param payInfo 결제 정보
+     * @return 결제 결과
+     */
+    private PayResult pay(PayInfo payInfo) {
+        if (isOnlinePay(payInfo))
+            return payOnline();
+        else
+            return payOffline();
+    }
+
+    /**
      * 결제 결과로 결제 여부를 판단한다.
      *
      * @param payResult 결제 결과
@@ -77,5 +90,34 @@ public class Method {
      */
     private void orderFail(Order order) {
 
+    }
+
+    /**
+     * 결제 정보에 따라 온라인, 오프라인 여부를 리턴한다.
+     *
+     * @param payInfo 결제 정보
+     * @return 온라인 오프라인 여부
+     */
+    private boolean isOnlinePay(PayInfo payInfo) {
+        return false;
+    }
+
+    /**
+     * 온라인 결제를 한다.
+     *
+     * @see Method#pay(me.kimyounghan.legacy.woowahan.method.Order)
+     * @return 결제 결과
+     */
+    private PayResult payOnline() {
+        return null;
+    }
+
+    /**
+     * 오프라인 결제를 한다.
+     *
+     * @return 결제 결과
+     */
+    private PayResult payOffline() {
+        return null;
     }
 }

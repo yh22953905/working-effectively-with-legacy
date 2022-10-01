@@ -6,4 +6,9 @@ package me.kimyounghan.legacy.woowahan.method;
  * @author 김영한
  */
 public class Order {
+    private PayInfo payInfo;
+
+    public PayInfo getPayInfo() {
+        return payInfo;
+    }
 }
