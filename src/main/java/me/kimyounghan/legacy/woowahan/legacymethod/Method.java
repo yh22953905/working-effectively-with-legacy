@@ -1,4 +1,4 @@
-package me.kimyounghan.legacy.woowahan.method;
+package me.kimyounghan.legacy.woowahan.legacymethod;
 
 /**
  * 레거시 메소드를 포장하는 예시
@@ -105,7 +105,7 @@ public class Method {
     /**
      * 온라인 결제를 한다.
      *
-     * @see Method#pay(me.kimyounghan.legacy.woowahan.method.Order)
+     * @see Method#pay(me.kimyounghan.legacy.woowahan.legacymethod.Order)
      * @return 결제 결과
      */
     private PayResult payOnline() {

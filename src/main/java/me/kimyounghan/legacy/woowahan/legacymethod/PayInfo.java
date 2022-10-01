@@ -1,4 +1,4 @@
-package me.kimyounghan.legacy.woowahan.method;
+package me.kimyounghan.legacy.woowahan.legacymethod;
 
 /**
  * 결제 정보 클래스
